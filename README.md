@@ -1,7 +1,7 @@
 ### 一. FeatureView
 
 * 独立组件封装FeatureView
-  * div>a>img
+  * div>a>img	
 
 
 
@@ -64,7 +64,7 @@ sell: page1/list[30]
 
 #### 4.2. 封装GoodsListItem.vue组件
 
-* props: goodsItem
+* props: goodsItem 
 * goodsItem 取出数据, 并且使用正确的div/span/img基本标签进行展示
 
 
@@ -109,7 +109,7 @@ sell: page1/list[30]
 
 
 
-#### 6.3. BackTop组件的显示和隐藏
+#### 6.3. BackTop组件的显示和隐藏 
 
 * isShowBackTop: false
 * 监听滚动, 拿到滚动的位置:

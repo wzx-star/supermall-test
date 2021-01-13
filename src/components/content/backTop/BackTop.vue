@@ -1,5 +1,5 @@
 <template>
-  <div class="back-top">
+  <div class="backTop">
     <img src="~assets/img/common/top.png" alt="">
   </div>
 </template>
@@ -11,14 +11,14 @@
 </script>
 
 <style scoped>
-  .back-top {
+  .backTop {
+    z-index: 9999;
     position: fixed;
-    right: 8px;
-    bottom: 55px;
+    right: 10px;
+    bottom: 60px;
   }
-
-  .back-top img {
-    width: 43px;
-    height: 43px;
+  .backTop img{
+    width: 50px;
+    height: 50px;
   }
 </style>

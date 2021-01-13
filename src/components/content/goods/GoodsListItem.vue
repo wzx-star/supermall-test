@@ -1,37 +1,50 @@
 <template>
-  <div class="goods-item">
-    <img :src="goodsItem.show.img" alt="">
+
+  <div class="goods-list-item" @click="goodsItemClick">
+    <a>
+      <img :src="goodsitem.show.img" alt="" @load="imgLoad">
+    </a>
     <div class="goods-info">
-      <p>{{goodsItem.title}}</p>
-      <span class="price">{{goodsItem.price}}</span>
-      <span class="collect">{{goodsItem.cfav}}</span>
+      <p class="desc">{{goodsitem.title}}</p>
+      <span class="price">{{goodsitem.price}}</span>
+      <span class="collect">{{goodsitem.cfav}}</span>
     </div>
+
   </div>
+
 </template>
 
 <script>
   export default {
     name: "GoodsListItem",
     props: {
-      goodsItem: {
+      goodsitem: {
         type: Object,
         default() {
-          return {}
+          return {};
         }
       }
+    },
+    methods: {
+      imgLoad() {
+        this.$bus.$emit('imgLoad')
+      },
+      goodsItemClick() {
+        this.$router.push('/detail/' + this.goodsitem.iid)
+      }
     }
+
   }
 </script>
 
 <style scoped>
-  .goods-item {
+  .goods-list-item {
     padding-bottom: 40px;
     position: relative;
-
     width: 48%;
   }
 
-  .goods-item img {
+  .goods-list-item img {
     width: 100%;
     border-radius: 5px;
   }
@@ -54,7 +67,7 @@
   }
 
   .goods-info .price {
-    color: var(--color-high-text);
+    color: var(--color-tint);
     margin-right: 20px;
   }
 
